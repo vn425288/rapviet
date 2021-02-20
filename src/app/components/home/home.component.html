@@ -1,0 +1,72 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+  <img width="700pz" alt="Angular Logo" src="http://4.bp.blogspot.com/-up1ZQ_bcvf4/VeCPeajyGQI/AAAAAAAAAcw/VJ7adHwAl3c/s1600/nhung-bai-rap-viet-soi-dong-nhat.jpg">
+</div>
+<br>
+<div class="container-fluid">
+  <h3>TUỲ CHỌN </h3>
+  <ul class="list-inline">
+    <li><a href="http://vi.rapviet.wikia.com/wiki/Th%C3%A0nh_vi%C3%AAn:Vn425288">Profile</a></li>
+    <li><a href="https://congdong.wikia.com/wiki/%C4%90%E1%BA%B7c_bi%E1%BB%87t:Li%C3%AAn_h%E1%BB%87"> Trợ Giúp </a></li>
+    <li><a href="#">Phản Hồi  </a></li>
+    <li><a href="http://vi.rapviet.wikia.com/wiki/L%E1%BB%8Bch_s%E1%BB%AD_Rap_Vi%E1%BB%87t">Lịch Sử Rap Việt </a></li>
+  </ul>
+</div>
+<br><br>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>DANH SÁCH ARTIST</h4>
+      <div style="width:150px;height:550px;overflow:auto;">
+      <ul class="nav nav-pills nav-stacked">
+          <li [ngClass]="{'active': item._id === selectedArtist._id }" *ngFor='let item of listArtist'>
+              <a (click)='loadDataDetail(item._id)'>{{ item.name }}</a>
+            </li>
+    
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <h4><small>THÔNG TIN CHI TIẾT</small></h4>
+      <hr>
+      <h2>{{ selectedArtist.name }}</h2>
+      <h5><span>
+        <img [src]='selectedArtist.avatar' class="img-thumbnail" alt="Cinque Terre" width="200px" height="200px" >
+      </span>
+      </h5>
+      <p> {{ selectedArtist.detail }}</p>
+      <br><br>
+      <span class="label label-primary">Share</span>
+      <br>
+      <h4>Bình luận:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Gửi</button>
+      </form>
+      <br><br>
+      <b>BÀI HÁT TIÊU BIỂU</b>
+      <br><br>
+      <a href='https://www.youtube.com/watch?v=GZUgkshzVEQ'>Buồn Không Em - Đạt G </a>
+      <br><br>
+      <a href='https://www.youtube.com/watch?v=V0e2cgpOrJQ'>Bâng khuâng - JustaTee</a>
+      <br><br>
+      <a href='https://www.youtube.com/watch?v=yrPIlWfM75o'>Krazy - Andree ft Binz</a>
+      <br><br>
+      <a href='https://www.youtube.com/watch?v=Lc5zxiQwr5Y'>Bae Don't Cry - Koo </a>
+      <br><br>
+    </div>
+  </div>
+</div>
